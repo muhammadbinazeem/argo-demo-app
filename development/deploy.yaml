@@ -1,0 +1,19 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-1
+  labels:
+    app: ngnix
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngnix
+  template:
+    metadata:
+      labels:
+        app: ngnix
+    spec:
+      containers:
+      - name: ngnix-container
+        image: nginx:latest
